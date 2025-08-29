@@ -1,0 +1,33 @@
+.box{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    background-color: rgb(176, 196, 239);
+    border: 1px solid black;
+    box-shadow: 20px 10px 30px
+     rgba(187, 165, 165, 0.469);
+     backdrop-filter:opacity(0.5);
+}
+
+#mode{
+    margin: 20px;
+    position: relative;
+    background-color: rgba(222, 50, 19, 0.849);
+    width: 100px;
+    height: 30px;
+    color: rgb(227, 227, 116);
+    border-color: yellow;
+    border-radius: 30px;
+    box-shadow: 5px 10px 20px
+     rgba(212, 200, 170, 0.53);
+}
+
+.dark {
+    background-color: black;
+    color:rgb(255, 255, 255);
+}
+.light{
+    background-color: rgb(246, 246, 246);
+    color: black;
+}
