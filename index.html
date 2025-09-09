@@ -1,18 +1,1051 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luxury E-Commerce Store - Modern Edition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Modern CSS Variables */
+        :root {
+            --bg-dark: #0A0A0A;
+            --bg-medium: #151515;
+            --bg-light: #2C2C2C;
+            --primary-accent: #E0B40A;
+            /* A sophisticated gold */
+            --secondary-accent: #3A3A3A;
+            --text-light: #F0F0F0;
+            --text-medium: #CCCCCC;
+            --text-dark: #888888;
+            --border-color: #333333;
+            --shadow-subtle: 0 4px 15px rgba(0, 0, 0, 0.4);
+            --shadow-strong: 0 10px 30px rgba(0, 0, 0, 0.8);
+            --transition-speed: 0.3s;
+        }
+
+        /* Global & Utility Classes */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: #870000;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #190A05, #870000);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #190A05, #870000);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            box-shadow: var(--shadow-strong);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+
+        }
+
+        a {
+            color: var(--primary-accent);
+            text-decoration: none;
+            transition: color var(--transition-speed) ease;
+        }
+
+        a:hover {
+            color: var(--text-light);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+
+        }
+
+        .btn {
+            background: linear-gradient(90deg, #E0B40A 0%, #FFD700 100%);
+            color: var(--bg-dark);
+            border: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary-accent);
+            text-shadow: 0 0 10px rgba(224, 180, 10, 0.3);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 2px;
+            background-color: var(--primary-accent);
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Header & Navigation */
+        .top-header {
+            background-color: var(--bg-medium);
+            padding: 10px 0;
+            text-align: center;
+            font-size: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .top-header p {
+            color: var(--text-medium);
+        }
+
+        .main-header {
+            background-color: rgba(21, 21, 21, 0.8);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-strong);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            height: 10px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--primary-accent);
+            cursor: pointer;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-links li a {
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--text-medium);
+        }
+
+        .nav-links li a:hover {
+            color: var(--primary-accent);
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 25px;
+            font-size: 1.2rem;
+        }
+
+        .nav-icons a {
+            color: var(--text-medium);
+            transition: color var(--transition-speed);
+        }
+
+        .nav-icons a:hover {
+            color: var(--primary-accent);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: url('https://picsum.photos/1920/1080?random=1') no-repeat center center/cover;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(2px);
+            z-index: -1;
+        }
+
+        .hero-content {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: var(--text-medium);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .product-card {
+            background-color: var(--bg-medium);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: var(--shadow-subtle);
+            
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-strong);
+        }
+
+        .product-image-container {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .product-details {
+            padding: 20px;
+        }
+
+        .product-details h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+
+        .product-details .price {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary-accent);
+            margin-bottom: 15px;
+        }
+        .product-details .rating {
+            color: #ffc107;
+            margin-bottom: 10px;
+        }
+
+        .product-details .rating .fa-star,
+        .product-details .rating .fa-star-half-alt {
+            transition: transform 0.2s;
+        }
+
+        .product-card:hover .rating .fa-star {
+            animation: star-bounce 0.5s ease;
+        }
+
+        @keyframes star-bounce {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Call to Action Section */
+        .cta-section {
+            background-color: var(--bg-medium);
+            padding: 80px 0;
+            text-align: center;
+            border-radius: 15px;
+            margin: 50px 0;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            color: var(--text-medium);
+            font-size: 1rem;
+            margin-bottom: 30px;
+        }
+
+        .cta-video {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-strong);
+        }
+
+        /* Map & Contact */
+        .contact-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .map-container {
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-strong);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .contact-info {
+            background-color: var(--bg-medium);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .contact-info h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-accent);
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+        }
+
+        .contact-info .icon {
+            color: var(--primary-accent);
+            margin-right: 10px;
+        }
+
+        /* Footer */
+        .main-footer {
+            background-color: var(--bg-medium);
+            padding: 50px 0;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-logo {
+            flex-basis: 30%;
+        }
+
+        .footer-logo .logo {
+            margin-bottom: 15px;
+        }
+
+        .footer-links-group {
+            flex-basis: 20%;
+        }
+
+        .footer-links-group h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--primary-accent);
+            position: relative;
+        }
+
+        .footer-links-group h4::after {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background-color: var(--primary-accent);
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+
+        .footer-links-group ul {
+            list-style: none;
+        }
+
+        .footer-links-group ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links-group a {
+            color: var(--text-medium);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-dark);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .nav-links {
+                gap: 20px;
+            }
+
+            .contact-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .logo {
+                font-size: 2rem;
+            }
+
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
+
 <body>
- 
-    <div class="box"> <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi debitis aliquam itaque ea fuga illum, nisi obcaecati ipsa dolores reiciendis.</p>
+
+    <div class="top-header">
+        <p>Free Shipping on All Orders Above ₹10,000</p>
     </div>
-    <button id="btn1">Click Me</button>
-    <button id="mode">Change Mode</button>
-    <script src="script.js"></script>
+
+    <header class="main-header">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">LUXURY</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Shop</a></li>
+                    <li><a href="#deals">Deals</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="#"><i class="fas fa-search"></i></a>
+                    <a href="#"><i class="fas fa-heart"></i></a>
+                    <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h1>Crafted for Excellence</h1>
+                <p>Discover a world of elegance and quality, where every piece tells a story of luxury.</p>
+                <button class="btn">Explore Collection</button>
+            </div>
+        </section>
+
+        <section id="products" class="container">
+            <h2 class="section-title">Exclusive Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://picsum.photos/400/300?random=1" alt="Product 1" />
+                    </div>
+                    <div class="product-details">
+                        <h3>Galaxy Watch Pro</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="far fa-star"></i>
+                        </div>
+                        <p class="price">₹19,999</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://picsum.photos/400/300?random=2" alt="Product 2" />
+                    </div>
+                    <div class="product-details">
+                        <h3>Crystal Diamond Ring</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="price">₹45,999</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://picsum.photos/400/300?random=3" alt="Product 3" />
+                    </div>
+                    <div class="product-details">
+                        <h3>Vintage Leather Bag</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                        </div>
+                        <p class="price">₹15,499</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://picsum.photos/400/300?random=4" alt="Product 4" />
+                    </div>
+                    <div class="product-details">
+                        <h3>4K OLED TV</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="price">₹99,999</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://picsum.photos/400/300?random=5" alt="Product 5" />
+                    </div>
+                    <div class="product-details">
+                        <h3>Handcrafted Gold Necklace</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="far fa-star"></i>
+                        </div>
+                        <p class="price">₹35,250</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://picsum.photos/400/300?random=6" alt="Product 6" />
+                    </div>
+                    <div class="product-details">
+                        <h3>Premium Bluetooth Headphones</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="price">₹12,799</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://picsum.photos/400/300?random=7" alt="Product 7" />
+                    </div>
+                    <div class="product-details">
+                        <h3>Designer Office Chair</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                        </div>
+                        <p class="price">₹22,999</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://picsum.photos/400/300?random=8" alt="Product 8" />
+                    </div>
+                    <div class="product-details">
+                        <h3>Handmade Silk Scarf</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="price">₹8,500</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://picsum.photos/400/300?random=9" alt="Product 9" />
+                    </div>
+                    <div class="product-details">
+                        <h3>Italian Leather Wallet</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="far fa-star"></i>
+                        </div>
+                        <p class="price">₹5,999</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://picsum.photos/400/300?random=10" alt="Product 10" />
+                    </div>
+                    <div class="product-details">
+                        <h3>Aged Whiskey Decanter Set</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="price">₹11,250</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://picsum.photos/400/300?random=11" alt="Product 11" />
+                    </div>
+                    <div class="product-details">
+                        <h3>Luxury Fountain Pen</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="price">₹7,800</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://picsum.photos/400/300?random=12" alt="Product 12" />
+                    </div>
+                    <div class="product-details">
+                        <h3>High-End Blender</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="price">₹9,500</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://picsum.photos/400/300?random=13" alt="Product 13" />
+                    </div>
+                    <div class="product-details">
+                        <h3>Premium Coffee Machine</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="far fa-star"></i>
+                        </div>
+                        <p class="price">₹21,000</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://picsum.photos/400/300?random=14" alt="Product 14" />
+                    </div>
+                    <div class="product-details">
+                        <h3>Luxury Silk Pajama Set</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                        </div>
+                        <p class="price">₹6,800</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://picsum.photos/400/300?random=15" alt="Product 15" />
+                    </div>
+                    <div class="product-details">
+                        <h3>Gold Plated Cufflinks</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="price">₹4,500</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://picsum.photos/400/300?random=16" alt="Product 16" />
+                    </div>
+                    <div class="product-details">
+                        <h3>Designer Desk Lamp</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="far fa-star"></i>
+                        </div>
+                        <p class="price">₹12,499</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://picsum.photos/400/300?random=17" alt="Product 17" />
+                    </div>
+                    <div class="product-details">
+                        <h3>Electric Scooter</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="price">₹28,500</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://picsum.photos/400/300?random=18" alt="Product 18" />
+                    </div>
+                    <div class="product-details">
+                        <h3>Smart Fitness Mirror</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                        </div>
+                        <p class="price">₹55,000</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://picsum.photos/400/300?random=19" alt="Product 19" />
+                    </div>
+                    <div class="product-details">
+                        <h3>High-Fidelity Speaker</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="price">₹29,999</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://picsum.photos/400/300?random=20" alt="Product 20" />
+                    </div>
+                    <div class="product-details">
+                        <h3>Luxury Bedding Set</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="far fa-star"></i>
+                        </div>
+                        <p class="price">₹18,250</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://picsum.photos/400/300?random=21" alt="Product 21" />
+                    </div>
+                    <div class="product-details">
+                        <h3>Crystal Chandelier</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                        </div>
+                        <p class="price">₹40,000</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://picsum.photos/400/300?random=22" alt="Product 22" />
+                    </div>
+                    <div class="product-details">
+                        <h3>Premium Running Shoes</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="price">₹9,800</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://picsum.photos/400/300?random=23" alt="Product 23" />
+                    </div>
+                    <div class="product-details">
+                        <h3>High-End Blender</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="price">₹11,500</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://picsum.photos/400/300?random=24" alt="Product 24" />
+                    </div>
+                    <div class="product-details">
+                        <h3>Handcrafted Leather Belt</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="price">₹3,999</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://picsum.photos/400/300?random=25" alt="Product 25" />
+                    </div>
+                    <div class="product-details">
+                        <h3>Luxurious Scented Candles</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                        </div>
+                        <p class="price">₹2,500</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://picsum.photos/400/300?random=26" alt="Product 26" />
+                    </div>
+                    <div class="product-details">
+                        <h3>Crystal Whisky Glasses</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="price">₹7,200</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://picsum.photos/400/300?random=27" alt="Product 27" />
+                    </div>
+                    <div class="product-details">
+                        <h3>Smart Home Assistant</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="price">₹14,999</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://picsum.photos/400/300?random=28" alt="Product 28" />
+                    </div>
+                    <div class="product-details">
+                        <h3>Gaming Laptop Pro</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="price">₹1,20,000</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://picsum.photos/400/300?random=29" alt="Product 29" />
+                    </div>
+                    <div class="product-details">
+                        <h3>Professional Camera Lens</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="price">₹75,000</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://picsum.photos/400/300?random=30" alt="Product 30" />
+                    </div>
+                    <div class="product-details">
+                        <h3>Luxury Perfume Collection</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="price">₹10,500</p>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="deals" class="cta-section container">
+            <h2 class="section-title">Limited Time Offer</h2>
+            <p>Experience the ultimate luxury. A curated collection of exclusive items, just for you.</p>
+            <div class="cta-video">
+                <iframe width="100%" height="400"
+                    src="https://www.youtube.com/embed/6KL2QZ91kAM?controls=0&mute=1&autoplay=1&loop=1" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+            <button class="btn">Shop Deals Now</button>
+        </section>
+
+        <section id="about" class="container">
+            <h2 class="section-title">Our Story</h2>
+            <div class="about-content">
+                <p style="text-align: center; max-width: 800px; margin: 0 auto; color: var(--text-medium);">
+                    Luxury is more than a price tag; it's a feeling, a statement, and a promise. At Luxury, we
+                    meticulously source and curate the finest products from around the globe, ensuring every item meets
+                    our stringent standards of quality and craftsmanship. Our passion for elegance and attention to
+                    detail is woven into every aspect of our business, from the selection of our products to the
+                    seamless shopping experience we provide. Join us on a journey to discover a world where luxury is a
+                    way of life.
+                </p>
+            </div>
+        </section>
+
+        <section id="contact" class="container contact-section">
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.834015091763!2d77.21634507421255!3d28.604675685822294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd034293f773%3A0x889851f5c697841c!2sConnaught%20Place%2C%20New%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1694247078342!5m2!1sen!2sin"
+                    allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="contact-info">
+                <h2>Get In Touch</h2>
+                <p><i class="fas fa-map-marker-alt icon"></i> 123 Luxury Blvd, New Delhi, India</p>
+                <p><i class="fas fa-phone icon"></i> +91 98765 43210</p>
+                <p><i class="fas fa-envelope icon"></i> support@luxuryshop.in</p>
+                <p><i class="fas fa-clock icon"></i> Mon-Fri: 9am - 6pm IST</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">LUXURY</div>
+                    <p style="color: var(--text-medium);">Crafting elegance. Delivering excellence.</p>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="#">New Arrivals</a></li>
+                        <li><a href="#">Best Sellers</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Electronics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Order Status</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Luxury E-Commerce. All Rights Reserved. Crafted with <i class="fas fa-heart"
+                        style="color: red;"></i>.</p>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>

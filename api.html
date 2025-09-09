@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Learning Dashboard</title>
+    <link rel="stylesheet" href="/Java-Script-main/api.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">API Learner</div>
+        <ul class="nav-links">
+            <li><a href="#" class="nav-link">Home</a></li>
+            <li><a href="#" class="nav-link">API Docs</a></li>
+            <li><a href="#" class="nav-link">Examples</a></li>
+            <li><a href="#" class="nav-link">About</a></li>
+        </ul>
+        <button class="fetch-btn" onclick="fetchData()">Fetch API Data</button>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Controls</h2>
+            <button class="sidebar-btn">Refresh Data</button>
+            <button class="sidebar-btn">Filter Results</button>
+            <button class="sidebar-btn">Sort Data</button>
+            <div class="api-info">
+                <h3>API Info</h3>
+                <p id="api-status">Status: Waiting...</p>
+            </div>
+        </aside>
+
+        <!-- Boxes Container -->
+        <div class="boxes-container">
+            <div class="boxes" id="data-boxes">
+                <!-- 20 Boxes will be populated here -->
+                <div class="box" data-id="1">
+                    <h3>Data Item 1</h3>
+                    <p id="fact">Loading...</p>
+                </div>
+                <div class="box" data-id="2">
+                    <h3>Data Item 2</h3>
+                    <p>Loading...</p>
+                </div>
+                <div class="box" data-id="3">
+                    <h3>Data Item 3</h3>
+                    <p>Loading...</p>
+                </div>
+                <div class="box" data-id="4">
+                    <h3>Data Item 4</h3>
+                    <p>Loading...</p>
+                </div>
+                <div class="box" data-id="5">
+                    <h3>Data Item 5</h3>
+                    <p>Loading...</p>
+                </div>
+                <div class="box" data-id="6">
+                    <h3>Data Item 6</h3>
+                    <p>Loading...</p>
+                </div>
+                <div class="box" data-id="7">
+                    <h3>Data Item 7</h3>
+                    <p>Loading...</p>
+                </div>
+                <div class="box" data-id="8">
+                    <h3>Data Item 8</h3>
+                    <p>Loading...</p>
+                </div>
+                <div class="box" data-id="9">
+                    <h3>Data Item 9</h3>
+                    <p>Loading...</p>
+                </div>
+                <div class="box" data-id="10">
+                    <h3>Data Item 10</h3>
+                    <p>Loading...</p>
+                </div>
+                <div class="box" data-id="11">
+                    <h3>Data Item 11</h3>
+                    <p>Loading...</p>
+                </div>
+                <div class="box" data-id="12">
+                    <h3>Data Item 12</h3>
+                    <p>Loading...</p>
+                </div>
+                <div class="box" data-id="13">
+                    <h3>Data Item 13</h3>
+                    <p>Loading...</p>
+                </div>
+                <div class="box" data-id="14">
+                    <h3>Data Item 14</h3>
+                    <p>Loading...</p>
+                </div>
+                <div class="box" data-id="15">
+                    <h3>Data Item 15</h3>
+                    <p>Loading...</p>
+                </div>
+                <div class="box" data-id="16">
+                    <h3>Data Item 16</h3>
+                    <p>Loading...</p>
+                </div>
+                <div class="box" data-id="17">
+                    <h3>Data Item 17</h3>
+                    <p>Loading...</p>
+                </div>
+                <div class="box" data-id="18">
+                    <h3>Data Item 18</h3>
+                    <p>Loading...</p>
+                </div>
+                <div class="box" data-id="19">
+                    <h3>Data Item 19</h3>
+                    <p>Loading...</p>
+                </div>
+                <div class="box" data-id="20">
+                    <h3>Data Item 20</h3>
+                    <p>Loading...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 API Learning Dashboard. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Contact</a>
+        </div>
+    </footer>
+
+    <script src="/Java-Script-main/api.js"></script>
+</body>
+</html>

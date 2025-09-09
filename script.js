@@ -47,3 +47,7 @@ modeBtn.addEventListener("click",()=>{
     }   
     console.log(currMode)
 });
+
+const btn4=() =>{
+   StyleSheet.Style
+}
